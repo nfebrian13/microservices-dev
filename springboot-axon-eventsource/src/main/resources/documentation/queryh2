@@ -1,1 +1,4 @@
 SELECT PAYLOAD_TYPE , AGGREGATE_IDENTIFIER, SEQUENCE_NUMBER , PAYLOAD   FROM DOMAIN_EVENT_ENTRY 
+
+
+source : http://progressivecoder.com/implementing-event-sourcing-with-axon-and-spring-boot-part-3//
