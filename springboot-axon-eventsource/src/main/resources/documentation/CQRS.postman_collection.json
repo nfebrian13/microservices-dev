@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "a0dba5a5-c57a-4b68-bbef-c8a7c591a306",
+		"name": "CQRS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "bank-accounts",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"currency\":\"USD\",\r\n    \"startingBalance\":20\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/bank-accounts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bank-accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "credits",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"currency\":\"USD\",\r\n    \"creditAmount\":100\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/bank-accounts/credits/61034db7-93de-4ff7-b9e6-53c9ec09ff1f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bank-accounts",
+						"credits",
+						"61034db7-93de-4ff7-b9e6-53c9ec09ff1f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "debits",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"currency\":\"USD\",\r\n    \"debitAmount\":40\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/bank-accounts/debits/61034db7-93de-4ff7-b9e6-53c9ec09ff1f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bank-accounts",
+						"debits",
+						"61034db7-93de-4ff7-b9e6-53c9ec09ff1f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listing events",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"currency\":\"USD\",\r\n    \"debitAmount\":40\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/bank-accounts/61034db7-93de-4ff7-b9e6-53c9ec09ff1f/events",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bank-accounts",
+						"61034db7-93de-4ff7-b9e6-53c9ec09ff1f",
+						"events"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
